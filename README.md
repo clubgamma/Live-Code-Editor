@@ -1,5 +1,5 @@
 
-# Live Code Editor
+# Live Code Editor 👨🏻‍💻
   
 An Online Editor that compiles your code live with HTML/CSS/JS
 
@@ -8,6 +8,7 @@ An Online Editor that compiles your code live with HTML/CSS/JS
 - It will be a code editor with live preview similar to Codepen
 - Write a function in app.js to show the compiled code back on the same page
 - Making it look decent with style.css
+- Make the textareas responsive with media queries
 
   
 ## Things to keep in mind
