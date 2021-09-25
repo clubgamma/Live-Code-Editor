@@ -10,6 +10,13 @@ An Online Editor that compiles your code live with HTML/CSS/JS
 - Making it look decent with style.css
 - Make the textareas responsive with media queries
 
+## Tech Stack
+
+- HTML
+- CSS
+- JS 
+- (No Libraries/Frameworks)
+
   
 ## Things to keep in mind
 
