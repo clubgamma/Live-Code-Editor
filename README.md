@@ -21,9 +21,7 @@ An Online Editor that compiles your code live with HTML/CSS/JS
 ## Things to keep in mind
 
   - **Before creating any Pull Request, please register yourself at [Hacktoberfest's Official Website](https://hacktoberfest.digitalocean.com/)**
-  - **Club Gamma swags will only be shipped inside India**
   - **If a maintainer reports behavior that’s not in line with the project’s code of conduct, then you will be ineligible to participate.**
-  - **Only first 30 contributors who successfully submit minimum 3 PRs to any of the projects in Club Gamma organization will get Club Gamma swags**
   - **To get Digital Ocean swags, you just have to make minimum 4 PRs to any open source projects on GitHub**
   - **If a maintainer reports your pull request as spam, it will not be counted towards your participation in Hacktoberfest.**
 
