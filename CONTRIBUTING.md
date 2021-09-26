@@ -46,7 +46,7 @@ If you don't see the "origin" remote, you can add it using the git command below
 First of all, make a folder named as your GitHub username which is compulsory. 
 
 
-![image](https://user-images.githubusercontent.com/52206701/94184858-2a006180-fec2-11ea-9bdc-8bec3d3d1f72.png)
+![Screenshot 2021-09-26 at 6 15 49 PM](https://user-images.githubusercontent.com/68161473/134808777-bf470e6b-b2e8-4aa6-8847-77359cfe97f9.png)
 
 
 - After that start writing code inside that folder only and you know what you have to code.
@@ -62,15 +62,15 @@ First of all, make a folder named as your GitHub username which is compulsory.
         
   - **Let's finish this**
 - Go to your forked repo on GitHub website and refresh the page, you'll see something like the below image
+![Screenshot 2021-09-26 at 6 16 17 PM](https://user-images.githubusercontent.com/68161473/134808811-741fac41-fdf4-4883-891a-ae628be25e73.png)
 
 
-![image](https://user-images.githubusercontent.com/52206701/94185006-6633c200-fec2-11ea-9cb8-d3efd2713d20.png)
 
 
 - Click on pull-request and you will be redirected to another page where you will see something like below image 
 
+![Screenshot 2021-09-26 at 6 16 36 PM](https://user-images.githubusercontent.com/68161473/134808817-fe9667e6-d34d-4c24-a9fd-c0a698aca37e.png)
 
-![image](https://user-images.githubusercontent.com/52206701/94185055-73e94780-fec2-11ea-8bcf-8eb838a2fad2.png)
 
   
 - After that you have to write your GitHub username as the title of your pull-request and describe your work if you want and that's it!! Create a pull-request by clicking the button
