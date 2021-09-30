@@ -1,12 +1,21 @@
+
 body {
-  margin: 0;
-  padding: 10px;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 textarea {
-  width: 33%;
+    width: 33%;
+    height: 33%;
 }
+
+@media (max-width: 850px){
+    textArea{
+        width: 99%;
+        margin-bottom: 1vh;
+    }
+} 
 
 iframe {
     width: 99%;
