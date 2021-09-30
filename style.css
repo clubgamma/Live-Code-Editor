@@ -1,11 +1,13 @@
 body {
-  
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 textarea {
-  
+  width: 33%;
 }
 
 iframe {
-  
+    width: 99%;
 }
