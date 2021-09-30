@@ -1,20 +1,34 @@
 <html>
-  <head>
-    <title>Live Code Editor</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
+	<head>
+		<title>Live Code Editor</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
 
-  <body>
-    <textarea id="html" placeholder="HTML"></textarea>
-    <textarea id="css" placeholder="CSS"></textarea>
-    <textarea id="js" placeholder="JavaScript"></textarea>
-    <iframe id="code">
+	<body>
+		<div class="editorContainer">
+			<div class="wrapper">
+				<div class="title">HTML<button class='control close'></button></div>
+				<textarea name="html" id="html" cols="auto" rows="auto" autocomplete="off" autocorrect="off"
+					autocapitalize="off" spellcheck="false"></textarea>
+			</div>
+			<div class="wrapper">
+				<div class="title">CSS<button class='control close'></button></div>
+				<textarea name="css" id="css" cols="auto" rows="auto" autocomplete="off" autocorrect="off"
+					autocapitalize="off" spellcheck="false"></textarea>
+			</div>
+			<div class="wrapper">
+				<div class="title">JS<button class='control close'></button></div>
+				<textarea name="js" id="js" cols="auto" rows="auto" autocomplete="off" autocorrect="off"
+					autocapitalize="off" spellcheck="false"></textarea>
+			</div>
+		</div>
+		<div class="outputContainer">
+			<iframe id='output' title='output' frameBorder='0' width='100%' height='100%'></iframe>
+		</div>
 
-      
-    </iframe>
+		<script type="text/javascript" src="app.js"></script>
+	</body>
 
-    <script type="text/javascript" src="app.js"></script>
-  </body>
 </html>
