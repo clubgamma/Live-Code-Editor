@@ -6,6 +6,20 @@ textarea {
   
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container {
+    display: flex;
+}
+
+textarea{
+    min-height: 10rem;
+    width: 100%;
+}
+
 iframe {
-  
+    flex: 1;
 }
