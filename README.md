@@ -10,6 +10,8 @@ An Online Editor that compiles your code live with HTML/CSS/JS
 - Making it look decent with style.css
 - Make the textareas responsive with media queries
 
+Read the [CONTRIBUTING.md](https://github.com/clubgamma/Live-Code-Editor/blob/main/CONTRIBUTING.md) to start your open source contribution.
+
 ![Screenshot 2021-09-26 at 1 23 26 AM](https://user-images.githubusercontent.com/68161473/134784501-98bf79b0-a17a-42f5-9983-92d618ac2e58.png)
 
 
