@@ -7,6 +7,7 @@ function compile() {
 	const data = ["html", "css", "js"].map((key) => {
 		const prefixedKey = PREFIX + key;
 		const jsonValue = localStorage.getItem(prefixedKey);
+		console.log(jsonValue);
 		if (jsonValue != null) return JSON.parse(jsonValue);
 	});
 	setInitial(data);
@@ -30,15 +31,21 @@ function compile() {
 }
 
 function setInitial(data) {
-	html.value = data[0] || "";
-	css.value = data[1] || "";
-	js.value = data[2] || "";
+	let htmlContent = data[0] || "";
+	let cssContent = data[1] || "";
+	let jsContent = data[2] || "";
+	css.value = cssContent;
+	js.value = jsContent;
+	html.value = htmlContent;
 	code.open();
 	code.writeln(
-		data[0] ||
-			"" + "<style>" + data[1] ||
-			"" + "</style>" + "<script>" + data[2] ||
-			"" + "</script>"
+		htmlContent +
+			"<style>" +
+			cssContent +
+			"</style>" +
+			"<script>" +
+			jsContent +
+			"</script>"
 	);
 	code.close();
 }
@@ -49,5 +56,15 @@ document.querySelectorAll(".control").forEach((control) =>
 	control.addEventListener("click", (e) => {
 		e.target.parentElement.parentElement.classList.toggle("collapse");
 		e.target.classList.toggle("close");
+		e.target.parentElement.querySelector("h2").classList.toggle("hidden");
+	})
+);
+
+document.querySelectorAll(".clear").forEach((clear) =>
+	clear.addEventListener("click", (e) => {
+		const ele = e.target.classList[1];
+		document.querySelector(`#${ele}`).value = "";
+		localStorage.setItem(`livecode-${ele}`, JSON.stringify(""));
+		compile();
 	})
 );
