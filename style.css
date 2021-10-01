@@ -52,7 +52,7 @@ textarea {
 }
 
 .title {
-	display: flex;
+	display: flex;fo
 	justify-content: space-between;
 	background: hsl(225, 6%, 13%);
 	color: #fff;
@@ -60,6 +60,8 @@ textarea {
 	padding-left: 1rem;
 	border-radius: 0.5rem 0.5rem 0 0;
 	font-family: 'Lato', sans-serif;
+	font-size: 1.1rem;
+   	font-weight: 700;
 }
 
 .control {
