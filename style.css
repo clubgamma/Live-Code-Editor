@@ -29,6 +29,7 @@ textarea {
 }
 .main-title{
 	display:flex;
+	margin:0;
 }
 .editorContainer {
 	background-color: hsl(225, 6%, 25%);
