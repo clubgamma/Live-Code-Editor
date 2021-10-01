@@ -1,132 +1,152 @@
 html,
 body {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 body::-webkit-scrollbar {
-	width: 5px;
+  width: 5px;
 }
 /* Track */
 body::-webkit-scrollbar-track {
-	border-radius: 10px;
+  border-radius: 10px;
 }
 
 /* Handle */
 body::-webkit-scrollbar-thumb {
-	background: #666b7a;
-	border-radius: 10px;
+  background: #666b7a;
+  border-radius: 10px;
 }
 
 textarea {
-	width: 100%;
-	height: 100%;
-	padding: 1rem;
-	background: #253237;
-	color: white;
-	outline: none;
-	border: none;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background: #253237;
+  color: white;
+  outline: none;
+  border: none;
 }
 .main-title {
-	display: flex;
+  display: flex;
 }
 h2 {
-	margin: 0;
+  margin: 0;
 }
 .editorContainer {
-	background-color: hsl(225, 6%, 25%);
-	height: 50vh;
-	display: flex;
+  background-color: hsl(225, 6%, 25%);
+  height: 50vh;
+  display: flex;
 }
 
 @media (max-width: 850px) {
-	.editorContainer {
-		flex-direction: column;
-		height: 66vh;
-	}
+  .editorContainer {
+    flex-direction: column;
+    height: 66vh;
+  }
 }
 
 .editorContainer .collapse {
-	flex-grow: 0;
+  flex-grow: 0;
 }
 
 .outputContainer {
-	height: 50vh;
+  height: 50vh;
 }
 
 .wrapper {
-	flex-grow: 1;
-	flex-basis: 0;
-	display: flex;
-	flex-direction: column;
-	padding: 0.5rem;
-	background: hsl(225, 6%, 25%);
-	position: relative;
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  background: hsl(225, 6%, 25%);
+  position: relative;
 }
 
 .title {
-	display: flex;
-	justify-content: space-between;
-	background: hsl(225, 6%, 13%);
-	color: #fff;
-	padding: 0.5rem;
-	padding-left: 1rem;
-	border-radius: 0.5rem 0.5rem 0 0;
-	font-family: "Lato", sans-serif;
-	font-size: 1.1rem;
-	font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  background: hsl(225, 6%, 13%);
+  color: #fff;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-family: "Lato", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .control {
-	width: 20px;
-	height: 20px;
-	position: relative;
-	background: transparent;
-	border: none;
-	outline: none;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 .control::before {
-	content: "➕";
-	position: absolute;
-	top: -2px;
-	left: -6px;
-	margin: 8px;
+  content: "➕";
+  position: absolute;
+  top: -2px;
+  left: -6px;
+  margin: 8px;
 }
 
 .close::before {
-	content: "❌";
-	position: absolute;
-	top: -2px;
-	left: -6px;
-	margin-top: 8px;
+  content: "❌";
+  position: absolute;
+  top: -2px;
+  left: -6px;
+  margin-top: 8px;
 }
 
 .icon {
-	margin-right: 5px;
+  margin-right: 5px;
 }
 
 .hidden {
-	display: none;
+  display: none;
 }
 
 .clear {
-	position: absolute;
-	top: 65px;
-	right: 15px;
-	background: hsl(0, 0%, 54%);
-	color: #fff;
-	border: none;
-	outline: none;
-	border-radius: 15px;
-	opacity: 0.75;
-	display: none;
+  position: absolute;
+  top: 65px;
+  right: 15px;
+  background: hsl(0, 0%, 54%);
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  opacity: 0.75;
+  display: none;
 }
 
 .wrapper:hover .clear {
-	display: block;
+  display: block;
 }
 
 .clear:hover {
-	opacity: 1;
+  opacity: 1;
+}
+.copy-btn {
+  background: #212d31;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.1rem;
+  font-family: "Lato", sans-serif;
+  padding: 8px 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.25s ease-in-out;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.copy-btn span {
+  margin-right: 5px;
+}
+.copy-btn:hover {
+  background: #3a505871;
 }
