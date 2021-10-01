@@ -27,7 +27,9 @@ textarea {
 	outline: none;
 	border: none;
 }
-
+.main-title{
+	display:flex;
+}
 .editorContainer {
 	background-color: hsl(225, 6%, 25%);
 	height: 50vh;
