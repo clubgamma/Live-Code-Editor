@@ -34,6 +34,13 @@ textarea {
 	display: flex;
 }
 
+@media (max-width: 850px){
+    .editorContainer{
+        flex-direction: column;
+        height: 66vh;
+    }
+} 
+
 .editorContainer .collapse {
 	flex-grow: 0;
 }
