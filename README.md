@@ -1,7 +1,7 @@
 
 # 👨🏻‍💻 Live Code Editor
   
-An Online Editor that compiles your code live with HTML/CSS/JS - https://clubgamma.github.io/Live-Code-Editor/
+An Online Editor that compiles your code live with HTML/CSS/JS
 
 ## Features
 
