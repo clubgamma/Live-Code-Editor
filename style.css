@@ -37,7 +37,7 @@ textarea {
 @media (max-width: 850px){
     .editorContainer{
         flex-direction: column;
-        height: 66%;
+        height: 66vh;
     }
 } 
 
