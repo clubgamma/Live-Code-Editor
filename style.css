@@ -29,6 +29,8 @@ textarea {
 }
 .main-title{
 	display:flex;
+}
+h2{
 	margin:0;
 }
 .editorContainer {
@@ -55,7 +57,7 @@ textarea {
 }
 
 .title {
-	display: flex;fo
+	display: flex;
 	justify-content: space-between;
 	background: hsl(225, 6%, 13%);
 	color: #fff;
