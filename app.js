@@ -56,7 +56,6 @@ document.querySelectorAll(".control").forEach((control) =>
 	control.addEventListener("click", (e) => {
 		e.target.parentElement.parentElement.classList.toggle("collapse");
 		e.target.classList.toggle("close");
-		e.target.parentElement.querySelector("h2").classList.toggle("hidden");
 	})
 );
 
