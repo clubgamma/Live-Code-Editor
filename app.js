@@ -13,44 +13,33 @@ function compile() {
     const jsonValue = localStorage.getItem(prefixedKey);
     if (jsonValue != null) return JSON.parse(jsonValue);
   });
-  setInitial(data);
+  codeInputs.html.value = data[0] || "";
+  codeInputs.css.value = data[1] || "";
+  codeInputs.js.value = data[2] || "";
+
   document.body.onkeyup = function () {
+    writeInIframe();
+
     localStorage.setItem("livecode-html", JSON.stringify(codeInputs.html.value));
     localStorage.setItem("livecode-css", JSON.stringify(codeInputs.css.value));
     localStorage.setItem("livecode-js", JSON.stringify(codeInputs.js.value));
-    code.open();
-    code.writeln(
-      codeInputs.html.value +
-        "<style>" +
-        codeInputs.css.value +
-        "</style>" +
-        "<script>" +
-        codeInputs.js.value +
-        "</script>"
-        );
-    code.close();
   };
+  writeInIframe();
 };
     
-function setInitial(data) {
-  let htmlContent = data[0] || "";
-  let cssContent = data[1] || "";
-  let jsContent = data[2] || "";
-  codeInputs.css.value = cssContent;
-  codeInputs.js.value = jsContent;
-  codeInputs.html.value = htmlContent;
+function writeInIframe() {
   code.open();
   code.writeln(
-    htmlContent +
-    "<style>" +
-    cssContent +
-    "</style>" +
-    "<script>" +
-    jsContent +
-    "</script>"
-    );
+    codeInputs.html.value +
+      "<style>" +
+      codeInputs.css.value +
+      "</style>" +
+      "<script>" +
+      codeInputs.js.value  +
+      "</script>"
+      );
   code.close();
-}
+};
 
 function displayMsgCopied(e) {
   const temp = e.target.innerHTML;
@@ -65,8 +54,6 @@ function copyCode(code) {
   document.execCommand("copy");
 };
   
-compile();
-  
 document.querySelectorAll(".control").forEach((control) =>
   control.addEventListener("click", (e) => {
     e.target.parentElement.parentElement.classList.toggle("collapse");
@@ -80,6 +67,7 @@ document.querySelectorAll(".clear").forEach((clear) =>
     const ele = e.target.classList[1];
     document.querySelector(`#${ele}`).value = "";
     localStorage.setItem(`livecode-${ele}`, JSON.stringify(""));
+
     compile();
   })
 );
@@ -90,3 +78,5 @@ for (let input of Object.keys(codeInputs)) {
     copyCode(codeInputs[input]);
   })
 }
+
+compile()
