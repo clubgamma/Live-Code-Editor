@@ -1,57 +1,72 @@
-var html = document.getElementById("html");
-var css = document.getElementById("css");
-var js = document.getElementById("js");
-var code = document.getElementById("output").contentWindow.document;
+const codeInputs = {
+  html: document.querySelector('#html'),
+  css: document.querySelector('#css'),
+  js: document.querySelector('#js')
+};
+
+const code = document.getElementById("output").contentWindow.document;
+
 function compile() {
   const PREFIX = "livecode-";
   const data = ["html", "css", "js"].map((key) => {
     const prefixedKey = PREFIX + key;
     const jsonValue = localStorage.getItem(prefixedKey);
-    console.log(jsonValue);
     if (jsonValue != null) return JSON.parse(jsonValue);
   });
   setInitial(data);
   document.body.onkeyup = function () {
-    localStorage.setItem("livecode-html", JSON.stringify(html.value));
-    localStorage.setItem("livecode-css", JSON.stringify(css.value));
-    localStorage.setItem("livecode-js", JSON.stringify(js.value));
-    console.log("keyup");
+    localStorage.setItem("livecode-html", JSON.stringify(codeInputs.html.value));
+    localStorage.setItem("livecode-css", JSON.stringify(codeInputs.css.value));
+    localStorage.setItem("livecode-js", JSON.stringify(codeInputs.js.value));
     code.open();
     code.writeln(
-      html.value +
+      codeInputs.html.value +
         "<style>" +
-        css.value +
+        codeInputs.css.value +
         "</style>" +
         "<script>" +
-        js.value +
+        codeInputs.js.value +
         "</script>"
-    );
+        );
     code.close();
   };
-}
-
+};
+    
 function setInitial(data) {
   let htmlContent = data[0] || "";
   let cssContent = data[1] || "";
   let jsContent = data[2] || "";
-  css.value = cssContent;
-  js.value = jsContent;
-  html.value = htmlContent;
+  codeInputs.css.value = cssContent;
+  codeInputs.js.value = jsContent;
+  codeInputs.html.value = htmlContent;
   code.open();
   code.writeln(
     htmlContent +
-      "<style>" +
-      cssContent +
-      "</style>" +
-      "<script>" +
-      jsContent +
-      "</script>"
-  );
+    "<style>" +
+    cssContent +
+    "</style>" +
+    "<script>" +
+    jsContent +
+    "</script>"
+    );
   code.close();
 }
 
-compile();
+function displayMsgCopied(e) {
+  const temp = e.target.innerHTML;
+  e.target.innerText = 'Copied!';
+  setTimeout( () => {
+    e.target.innerHTML = temp
+  }, 800)
+};
 
+function copyCode(code) {
+  code.select();
+  document.execCommand("copy");
+};
+  
+compile();
+  
 document.querySelectorAll(".control").forEach((control) =>
   control.addEventListener("click", (e) => {
     e.target.parentElement.parentElement.classList.toggle("collapse");
@@ -69,31 +84,9 @@ document.querySelectorAll(".clear").forEach((clear) =>
   })
 );
 
-document.querySelectorAll(".copy-btn").forEach((copy) => {
-  copy.addEventListener("click", (e) => {
-    const temp = e.target.innerHTML;
-    e.target.innerText = "Copied!";
-    setTimeout(function () {
-      e.target.innerHTML = temp;
-    }, 800);
-  });
-});
-
-document.querySelector(".copy-html").addEventListener("click", (e) => {
-  const code = document.querySelector("#html");
-  copyCode(code);
-});
-
-document.querySelector(".copy-css").addEventListener("click", (e) => {
-  const code = document.querySelector("#css");
-  copyCode(code);
-});
-document.querySelector(".copy-js").addEventListener("click", (e) => {
-  const code = document.querySelector("#js");
-  copyCode(code);
-});
-
-function copyCode(code) {
-  code.select();
-  document.execCommand("copy");
+for (let input of Object.keys(codeInputs)) {
+  document.querySelector(`.copy-${input}`).addEventListener('click', (e) => {
+    displayMsgCopied(e);
+    copyCode(codeInputs[input]);
+  })
 }
