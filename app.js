@@ -1,10 +1,10 @@
-var html = document.getElementById("html");
-var css = document.getElementById("css");
-var js = document.getElementById("js");
-var code = document.getElementById("output").contentWindow.document;
+var html = document.getElementById('html');
+var css = document.getElementById('css');
+var js = document.getElementById('js');
+var code = document.getElementById('output').contentWindow.document;
 function compile() {
-  const PREFIX = "livecode-";
-  const data = ["html", "css", "js"].map((key) => {
+  const PREFIX = 'livecode-';
+  const data = ['html', 'css', 'js'].map((key) => {
     const prefixedKey = PREFIX + key;
     const jsonValue = localStorage.getItem(prefixedKey);
     console.log(jsonValue);
@@ -12,88 +12,97 @@ function compile() {
   });
   setInitial(data);
   document.body.onkeyup = function () {
-    localStorage.setItem("livecode-html", JSON.stringify(html.value));
-    localStorage.setItem("livecode-css", JSON.stringify(css.value));
-    localStorage.setItem("livecode-js", JSON.stringify(js.value));
-    console.log("keyup");
+    localStorage.setItem('livecode-html', JSON.stringify(html.value));
+    localStorage.setItem('livecode-css', JSON.stringify(css.value));
+    localStorage.setItem('livecode-js', JSON.stringify(js.value));
     code.open();
     code.writeln(
       html.value +
-        "<style>" +
+        '<style>' +
         css.value +
-        "</style>" +
-        "<script>" +
+        '</style>' +
+        '<script>' +
         js.value +
-        "</script>"
+        '</script>'
     );
     code.close();
   };
 }
 
 function setInitial(data) {
-  let htmlContent = data[0] || "";
-  let cssContent = data[1] || "";
-  let jsContent = data[2] || "";
+  let htmlContent = data[0] || '<h1>Welcome to the Live Code Editor!</h1>';
+  let cssContent =
+    data[1] ||
+    `body {
+    background-color: #222;
+    }
+    h1 {
+      color: #fff;
+      text-align: center;
+      margin-top: 10%;
+    }`;
+  let jsContent = data[2] || '';
   css.value = cssContent;
+  console.log(cssContent);
   js.value = jsContent;
   html.value = htmlContent;
   code.open();
   code.writeln(
     htmlContent +
-      "<style>" +
+      '<style>' +
       cssContent +
-      "</style>" +
-      "<script>" +
+      '</style>' +
+      '<script>' +
       jsContent +
-      "</script>"
+      '</script>'
   );
   code.close();
 }
 
 compile();
 
-document.querySelectorAll(".control").forEach((control) =>
-  control.addEventListener("click", (e) => {
-    e.target.parentElement.parentElement.classList.toggle("collapse");
-    e.target.classList.toggle("close");
-    e.target.parentElement.querySelector("h2").classList.toggle("hidden");
+document.querySelectorAll('.control').forEach((control) =>
+  control.addEventListener('click', (e) => {
+    e.target.parentElement.parentElement.classList.toggle('collapse');
+    e.target.classList.add('close');
+    e.target.parentElement.querySelector('h2').classList.toggle('hidden');
   })
 );
 
-document.querySelectorAll(".clear").forEach((clear) =>
-  clear.addEventListener("click", (e) => {
+document.querySelectorAll('.clear').forEach((clear) =>
+  clear.addEventListener('click', (e) => {
     const ele = e.target.classList[1];
-    document.querySelector(`#${ele}`).value = "";
-    localStorage.setItem(`livecode-${ele}`, JSON.stringify(""));
+    document.querySelector(`#${ele}`).value = '';
+    localStorage.setItem(`livecode-${ele}`, JSON.stringify(''));
     compile();
   })
 );
 
-document.querySelectorAll(".copy-btn").forEach((copy) => {
-  copy.addEventListener("click", (e) => {
+document.querySelectorAll('.copy-btn').forEach((copy) => {
+  copy.addEventListener('click', (e) => {
     const temp = e.target.innerHTML;
-    e.target.innerText = "Copied!";
+    e.target.innerText = 'Copied!';
     setTimeout(function () {
       e.target.innerHTML = temp;
     }, 800);
   });
 });
 
-document.querySelector(".copy-html").addEventListener("click", (e) => {
-  const code = document.querySelector("#html");
+document.querySelector('.copy-html').addEventListener('click', (e) => {
+  const code = document.querySelector('#html');
   copyCode(code);
 });
 
-document.querySelector(".copy-css").addEventListener("click", (e) => {
-  const code = document.querySelector("#css");
+document.querySelector('.copy-css').addEventListener('click', (e) => {
+  const code = document.querySelector('#css');
   copyCode(code);
 });
-document.querySelector(".copy-js").addEventListener("click", (e) => {
-  const code = document.querySelector("#js");
+document.querySelector('.copy-js').addEventListener('click', (e) => {
+  const code = document.querySelector('#js');
   copyCode(code);
 });
 
 function copyCode(code) {
   code.select();
-  document.execCommand("copy");
+  document.execCommand('copy');
 }
