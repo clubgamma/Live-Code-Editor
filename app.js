@@ -17,12 +17,9 @@ function compile() {
   codeInputs.css.value = data[1] || "";
   codeInputs.js.value = data[2] || "";
 
-  document.body.onkeyup = function () {
+  document.body.onkeyup = function (e) {
     writeInIframe();
-
-    localStorage.setItem("livecode-html", JSON.stringify(codeInputs.html.value));
-    localStorage.setItem("livecode-css", JSON.stringify(codeInputs.css.value));
-    localStorage.setItem("livecode-js", JSON.stringify(codeInputs.js.value));
+    localStorage.setItem(`livecode-${e.target.name}`, JSON.stringify(codeInputs[e.target.name].value));
   };
   writeInIframe();
 };
