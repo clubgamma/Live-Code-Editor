@@ -7,7 +7,7 @@ function compile() {
   const data = ['html', 'css', 'js'].map((key) => {
     const prefixedKey = PREFIX + key;
     const jsonValue = localStorage.getItem(prefixedKey);
-    console.log(jsonValue);
+
     if (jsonValue != null) return JSON.parse(jsonValue);
   });
   setInitial(data);
@@ -43,7 +43,6 @@ function setInitial(data) {
     }`;
   let jsContent = data[2] || '';
   css.value = cssContent;
-  console.log(cssContent);
   js.value = jsContent;
   html.value = htmlContent;
   code.open();
@@ -105,4 +104,5 @@ document.querySelector('.copy-js').addEventListener('click', (e) => {
 function copyCode(code) {
   code.select();
   document.execCommand('copy');
+  swal('Copied!', 'You are ready to rock', 'success');
 }
