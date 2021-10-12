@@ -5,8 +5,20 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
+*{
+     color: white;
+  box-sizing: border-box;
+}
+
 
 body::-webkit-scrollbar {
   width: 5px;
@@ -38,7 +50,14 @@ h2 {
   margin: 0;
 }
 .editorContainer {
-  background-color: hsl(225, 6%, 25%);
+        
+  background-image: url('back.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position:center;
+  background-size: 100% ;
+
+ 
   height: 50vh;
   display: flex;
 }
@@ -58,7 +77,9 @@ h2 {
   height: 50vh;
   user-select: none;
   border-bottom: 20px solid hsl(225, 6%, 25%);
+
 }
+
 
 .wrapper {
   flex-grow: 1;
@@ -73,12 +94,16 @@ h2 {
 .title {
   display: flex;
   justify-content: space-between;
-  background: hsl(225, 6%, 13%);
+  background-image: url('back.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position:center;
+  background-size: 100% ;
   color: #fff;
   padding: 0.5rem;
   padding-left: 1rem;
   border-radius: 0.5rem 0.5rem 0 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
 }
@@ -88,6 +113,7 @@ h2 {
   height: 20px;
   position: relative;
   background: transparent;
+  opacity: 70%;
   border: none;
   outline: none;
   font-size: 1.2rem;
